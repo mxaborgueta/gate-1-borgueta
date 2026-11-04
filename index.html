@@ -48,9 +48,11 @@
     // ============================================================
     function computeSubtotal(items) {
       let subtotal = 0;
+
       for (const item of items) {
         subtotal += item.price * item.qty;
       }
+
       return subtotal;
     }
 
@@ -64,6 +66,7 @@
       if (total > 500) {
         return total * 0.9;
       }
+
       return total;
     }
 
@@ -93,8 +96,10 @@
             console.log(`${item.name} x${item.qty} = ${itemTotal}`);
             html += `<li>${item.name} x${item.qty} = ${itemTotal}</li>`;
         }
+
         html += '</ul>';
         html += `<p><strong>TOTAL: ${finalTotal}</strong></p>`;
+        
         document.getElementById('receipt').innerHTML = html;
     }
 
